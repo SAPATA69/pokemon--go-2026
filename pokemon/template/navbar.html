@@ -3,7 +3,7 @@
     {% if current_user.is_authenticated %}
         <a class="navbar-brand" href="#">Pokemon Go</a>
     {% else %}
-        <a class="navbar-brand" href="#">Pokemon Go</a>
+        <a class="navbar-brand" href="{{url_for('core.index')}}">Pokemon Go</a>
     {% endif %}
     
     
@@ -14,18 +14,18 @@
       {% if current_user.is_authenticated %}
         <ul class="navbar-nav me-auto">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link active" aria-current="page" href="{{url_for('users.index')}}">Home</a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">Pokedex</a>
+            <a href="{{url_for('pokemon.index')}}" class="nav-link">Pokemons</a>
           </li>
         </ul>
       {% else %}
         <ul class="navbar-nav me-auto">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
           
+          <li class="nav-item">
+            
+          </li>
         </ul>
       {% endif %}
       
@@ -40,24 +40,24 @@
                 Welcome, {{current_user.username}}
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">
+                <li><a class="dropdown-item" href="{{url_for('users.profile')}}">
                   <i class="bi bi-person-square"></i>
                   Profile</a></li>
                 <li><a class="dropdown-item" href="#">
                   <i class="bi bi-input-cursor-text"></i>
                   Change Password</a></li>
                 <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">
+                <li><a class="dropdown-item" href="{{url_for('users.logout')}}">
                   <i class="bi bi-box-arrow-left"></i>
                   Logout</a></li>
               </ul>
             </li>
         {% else %}
             <li class="nav-item">
-              <a class="nav-link" href="#">Register</a>
+              <a class="nav-link" href="{{url_for('users.register')}}">Register</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Login</a>
+              <a class="nav-link" href="{{url_for('users.login')}}">Login</a>
             </li>
         
         

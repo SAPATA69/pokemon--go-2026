@@ -12,7 +12,7 @@
       {% for pokemon in pokemons %}
         <div class="col-lg-3">
           <div class="card mt-4 card-pokemon">
-            <a href="#">
+            <a href="{{url_for('core.detail', id=pokemon.id)}}">
               <img src="{{pokemon.img_url}}" alt="" class="card-img-top bg-secondary">
             </a>
             <div class="card-body">

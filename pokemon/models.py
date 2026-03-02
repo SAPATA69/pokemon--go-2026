@@ -1,7 +1,7 @@
 from pokemon.extensions import db, login_manager
 from sqlalchemy import Integer, String, Text, Table, Column, DateTime, ForeignKey, func
 from sqlalchemy.orm import Mapped, mapped_column, relationship
-from typing import List 
+from typing import List
 from datetime import datetime
 from flask_login import UserMixin
 
