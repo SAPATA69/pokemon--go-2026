@@ -10,36 +10,25 @@
     <hr>
     <div class="card mt-3 mb-3">
       <div class="card-header">
-        <h3>Profile Information</h3>
+        <h3>เข้าสู่ระบบ</h3>
       </div>
       <div class="card-body">
-        <form class="row g-3" method="post">
-          <div class="col-md-6">
-            <label for="username" class="form-label">Username</label>
-            <input disabled value="{{user.username}}" type="text" class="form-control" id="username">
+        <form method="post">
+          <div class="mb-3">
+            <label for="username" class="form-label">ชื่อผู้ใช้</label>
+            <input name="username" type="text" class="form-control" id="username" required>
           </div>
-          <div class="col-md-6">
-            <label for="email" class="form-label">Email Address</label>
-            <input disabled value="{{user.email}}" type="email" class="form-control" id="email">
+          <div class="mb-3">
+            <label for="password" class="form-label">รหัสผ่าน</label>
+            <input name="password" type="password" class="form-control" id="password" required>
           </div>
-          <div class="col-md-6">
-            <label for="firstname" class="form-label">Firstname</label>
-            <input name="firstname" value="{{user.firstname}}" type="text" class="form-control" id="firstname">
-          </div>
-          <div class="col-md-6">
-            <label for="lastname" class="form-label">Lastname</label>
-            <input name="lastname" value="{{user.lastname}}" type="text" class="form-control" id="lastname">
-          </div>
-          
           <hr>
-          <div class="col-12">
-            <button type="submit" class="btn btn-outline-secondary">
-              <i class="bi bi-person-square"></i>
-              Update Profile</button>
-          </div>
+          <button type="submit" class="btn btn-outline-secondary">
+            <i class="bi bi-box-arrow-in-right"></i>
+            เข้าสู่ระบบ
+          </button>
         </form>
       </div>
     </div>
   </div>
 {% endblock %}
-
