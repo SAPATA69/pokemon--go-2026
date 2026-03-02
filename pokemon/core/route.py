@@ -14,8 +14,6 @@ def index():
 
 @core_bp.route('/')
 def index():
-  page = request.args.get('page', type=int)    # ให้เพิ่ม type=int 
-  pokemons = db.paginate(sa.select(Pokemon), per_page=4, page=page)
-  return render_template('core/index.html',
-                         title='Home Page',
-                         pokemons=pokemons)
+  page = request.args.get('page', type=int)  # ✅ แปลงเป็น int
+  pokemons = db.paginate(db.select(Pokemon), per_page=4, page=page)
+ฟ
