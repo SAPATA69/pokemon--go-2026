@@ -22,4 +22,8 @@ def create_app():
     app.register_blueprint(users_bp, url_prefix='/users')
     app.register_blueprint(pokemon_bp, url_prefix='/pokemons')
 
+    # สร้าง tables ตอน app เริ่มทำงาน 
+    with app.app_context():
+        db.create_all()
+
     return app
